@@ -1,0 +1,26 @@
+{
+    
+  "data": [
+    {
+      "name": "Automation1",
+      "email": "aution@cypress.io",
+      "password": "automation@demo.com",
+      "gender": "Male",
+      "dob": "2000-01-01"
+    },
+    {
+      "name": "Automation2",
+      "email": "aution@cypress.io",
+      "password": "automation@demo.com",
+      "gender": "Female",
+      "dob": "2000-01-01"
+    },
+    {
+      "name": "Automation3",
+      "email": "aution@cypress.io",
+      "password": "automation@demo.com",
+      "gender": "Female",
+      "dob": "2000-01-01"
+    }
+  ]
+}
