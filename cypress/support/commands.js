@@ -62,14 +62,14 @@ Cypress.Commands.add('Addproduct', (Prodname) => {
 
     const home = new Homepage()
 
-    cy.get('h4.card-title a').each(($cartitem, index, $listofvegetablesincart) => {
+    home.getProductlist().each(($cartitem, index, $listofvegetablesincart) => {
 
         var text = $cartitem.text()
         cy.log(text)
 
         if (text.includes(Prodname)) {
             cy.wait(4000)
-            cy.get('.btn.btn-info').eq(index).then($addbtn => {
+            home.getAddbtnlist().eq(index).then($addbtn => {
 
                 cy.wrap($addbtn).scrollIntoView().click()
                 cy.wait(2000)
