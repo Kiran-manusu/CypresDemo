@@ -16,8 +16,6 @@ describe('Angular Demo Website',()=>{
        it('First Demo Practice Page',()=>{
           cy.visit('https://rahulshettyacademy.com/angularpractice/')
 
-          cy.login().type(text)
-
         //   Creating Random Generetor Name
 
         //   cy.get('div.form-group input[name="name"]').type(userID_Alpha())

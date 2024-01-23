@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import 'cypress-iframe';
+export{}
 
 Cypress.Commands.add('AssertionValue', (Actualvalue, Expectvalue) => {
     try {
@@ -36,16 +37,10 @@ Cypress.Commands.add('AssertionValue', (Actualvalue, Expectvalue) => {
    
   })
 
-  Cypress.Commands.add('set_typeCarName',() => {
-    return cy.wrap(webnewsite.set_typeCarName()); //return the wrap and use in chain
-    function userID_Alpha() {
-        var text = "";
-         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-         for (var i = 0; i < 10; i++)
-         text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-         return text;}
+  Cypress.Commands.add('setrandomvalue',() => {
+   
+    var random =  Math.random('36').toString().substring(2, 9)
+    return random
 });
 
 
