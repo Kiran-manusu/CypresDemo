@@ -2,6 +2,10 @@
 /// <reference types="Cypress-iframe" />
 
 describe('Angular Demo Website',()=>{
+    let namevalue;
+
+
+
     let multipledata
           
           before(()=>{
@@ -33,15 +37,34 @@ describe('Angular Demo Website',()=>{
             // Validate the Length
             cy.get('div.form-group input[name="name"]').should('have.attr','minlength','2')
   
-          cy.get('div.form-group input[name="name"]').type(data2.name)
+          // cy.get('div.form-group input[name="name"]').type(radname)
           
+          cy.setrandomvalue().then(value=>{
+           
+            namevalue= value
+            cy.get('div.form-group input[name="name"]').type(value)
+
+            cy.get("h4 input[name='name']").should('contain.value',value)
+
+          })
+          // or
+    
+          //  }).then(()=>{
+          //   cy.get("h4 input[name='name']").should('contain.value',namevalue)
+          //  })
+
           cy.get('div.form-group input[name="email"]').type(data2.email)
           
           cy.get('#exampleInputPassword1').type(data2.password)
           
           cy.get('#exampleCheck1').check()
           
-          cy.get('#exampleFormControlSelect1').select(data2.gender)
+          cy.RandGenderGen().then(gender=>{
+
+          cy.get('#exampleFormControlSelect1').select(gender)
+          // cy.get('#exampleFormControlSelect1').select(data2.gender)
+          
+           })
           
           cy.get('#inlineRadio1').check()
           
@@ -51,9 +74,15 @@ describe('Angular Demo Website',()=>{
          
           cy.get('.alert').contains('Success')
 
+
+          // cy.setrandomvalue().then(value=>{
+
+          // cy.get("h4 input[name='name']").should('contain.value',namevalue)
+    
+          //  })
           
             // Validate the Name is Presenting or not
-            cy.get("h4 input[name='name']").should('contain.value',data2.name)
+            // cy.get("h4 input[name='name']").should('contain.value',data2.name)
 
             // Validate the Min Length using invoke
             cy.get('div.form-group input[name="name"]').invoke('attr', 'minlength').should('contain', 2)

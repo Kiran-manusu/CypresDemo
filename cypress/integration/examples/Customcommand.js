@@ -6,8 +6,15 @@ describe('Angular Demo Website',()=>{
 
     it('First Demo Practice Page',()=>{
         
-       var name = cy.set_typeCarName()
-        cy.log(name)
+       cy.setrandomvalue().then((value)=>{
+        cy.log(value)
+
+       })
+
+       cy.RandGenderGen().then(gender=>{
+        cy.log(gender)
+       })
+        
         
     })
    
